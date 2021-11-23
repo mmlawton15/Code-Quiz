@@ -5,8 +5,10 @@
     --light-purple: #b497d6;
 }
 
-body {
+html, body,
+.wrapper {
     background-color: white;
+    height: 100%
 }
 
 header {
@@ -14,7 +16,25 @@ header {
     margin: 15px;
 }
 
+.wrapper {
+    padding-top:35px;
+    padding-left:25px;
+    padding-right:25px;
+}
+
+.card {
+    font-size: 18px;
+    margin:0 auto;
+    max-width: 800px;
+    padding: 30px 40px;
+}
+
 .timerStyle {
     position: relative;
     float: right;
+}
+
+.viewHighScoreStyle {
+    position: relative;
+    float:left;
 }
