@@ -1,6 +1,8 @@
-// GIVEN I am taking a code quiz
+// DONE - GIVEN I am taking a code quiz
 // WHEN I click the start button
-// THEN a timer starts and I am presented with a question
+// DONE - THEN a timer starts 
+// SIMULTANEOUSLY I am presented with a question
+// THIS question has 4 multiple choise questions
 // WHEN I answer a question
 // THEN I am presented with another question
 // WHEN I answer a question incorrectly
@@ -12,9 +14,6 @@
 
 
 
-//when user opens application, they're presented with 2 buttons and instructions to start quiz
-// done - when start button is clicked, time starts counting down from 60.
-//simultaneously they're presented with the first question and 4 multiple choice buttons (answers)
 
 
 // TIMER CODE
@@ -26,7 +25,9 @@ function tickTime() {
     document.getElementById('timerStart').innerHTML = time;
 }
 
-document.getElementById("startButton").addEventListener("click",function() { //is this conflicting with the above code?
+
+//START BUTTON CODE
+document.getElementById("startButton").addEventListener("click",function() { 
     timerInterval = setInterval(() => {
         if (time > 0) {
             tickTime();
@@ -34,4 +35,5 @@ document.getElementById("startButton").addEventListener("click",function() { //i
             clearInterval(timerInterval);
         }
     }, 1000)
+    //add first question prompt code here
 });
