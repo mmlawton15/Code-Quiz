@@ -59,12 +59,15 @@ window.onload = function() {
 
 
 
-document.getElementById("startButton").addEventListener("click",function() {
+document.getElementById("startButton").addEventListener("click",function() { //is this conflicting with the above code?
     document.getElementById("timerStart");
     if (timerValue <= 60) {
         timerValue --;
-    } else if (timerValue <= 0) {
-        
+        console.log(timerValue);
+        return timerValue;
+    } else {
+        console.log(timerValue);
+        return timerValue;
     }
 
 });
