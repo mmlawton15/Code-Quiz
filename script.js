@@ -9,3 +9,19 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
+
+
+
+//when user opens application, they're presented with 2 buttons and instructions to start quiz
+//when start button is clicked, time starts counting down from 60.
+//simultaneously they're presented with the first question and 4 multiple choice buttons (answers)
+
+
+// timer countdown
+// every seconde
+// -- reach into the html, grab the current time
+// -- change it to a number
+// -- decrease it by one
+// -- put it back into the html
+// continue that until 0
+// clear the timer
