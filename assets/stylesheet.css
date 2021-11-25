@@ -1,3 +1,5 @@
+
+/*FAVORITE COLORS*/
 :root {
     --dark-purple: #433582;
     --red: #BA1f33;
@@ -5,36 +7,55 @@
     --light-purple: #b497d6;
 }
 
-html, body,
-.wrapper {
-    background-color: white;
-    height: 100%
-}
-
-header {
-    padding: 15px;
-    margin: 15px;
-}
-
-.wrapper {
-    padding-top:35px;
-    padding-left:25px;
-    padding-right:25px;
-}
-
-.card {
-    font-size: 18px;
-    margin:0 auto;
-    max-width: 800px;
-    padding: 30px 40px;
-}
-
+/*BUTTONS AT THE TOP*/
 .timerStyle {
     position: relative;
     float: right;
+    width:auto;
 }
 
 .viewHighScoreStyle {
     position: relative;
     float:left;
+    width:auto;
+}
+
+
+/*BODY STYLES*/
+.wrapper {
+    background-color: white;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin:auto;
+}
+
+.header {
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+header div {
+    padding-top:30px;
+    margin-right:20px;
+}
+
+
+/*CARD DETAILS*/
+
+.card {
+    font-size: 18px;
+    margin: auto;
+    max-width: 800px;
+    padding: 30px 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+.card h1 {
+    background-color: var(--dark-purple);
+    color: (white)
 }
