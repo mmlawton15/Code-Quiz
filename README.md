@@ -7,3 +7,9 @@ It's multiple choice, and a positive sound will play for right answers and incre
 
 ## How did you create it?
 I created the webpage with HTML, the styling for the page with CSS, and the logic behind the interactivity with Javascript.
+
+## Where can I find this?
+You can find this either at my Github Repo(https://github.com/mmlawton15/challenge-four-snowflake) or at the Live URL (https://mmlawton15.github.io/challenge-four-snowflake/)
+
+## What does it look like?
+You can view a preview of what this looks like here: https://github.com/mmlawton15/challenge-four-snowflake/issues/1
