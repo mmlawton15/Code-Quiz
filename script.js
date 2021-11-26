@@ -2,7 +2,7 @@
 // WHEN I click the start button
 // DONE - THEN a timer starts 
 // SIMULTANEOUSLY I am presented with a question
-// THIS question has 4 multiple choise questions
+// THIS question has 4 multiple choice questions
 // WHEN I answer a question
 // THEN I am presented with another question
 // WHEN I answer a question incorrectly
@@ -37,3 +37,5 @@ document.getElementById("startButton").addEventListener("click",function() {
     }, 1000)
     //add first question prompt code here
 });
+
+
