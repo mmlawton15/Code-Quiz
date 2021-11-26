@@ -7,11 +7,13 @@
     --light-purple: darkorchid;
 }
 
-/*BUTTONS AT THE TOP*/
+/*TIMER AND BUTTON AT THE TOP*/
 .timerStyle {
     float: right;
     width:auto;
     height:auto;
+    margin-bottom: 25px;
+    margin-right: 25px;
 }
 
 .viewHighScoreStyle {
