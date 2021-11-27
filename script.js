@@ -72,17 +72,19 @@ var score = 0;
 
 
 //LOOP FOR QUESTIONS
-for (var i=0; i <questions.length; i++){
-    var answers = window.prompt(questions[i].prompt);
-    if(response == questions[i].answer){
-        score++;
-        alert("Correct");
-    } else {
-        alert("Incorrect");
-        //deduct time here
-    }
-}
-alert("You got " + score + "of " + questions.length);
+// for (var i=0; i <questions.length; i++){
+//     var answers = window.prompt(questions[i].prompt);
+//     if(response == questions[i].answer){
+//         score++;
+//         alert("Correct");
+//     } else {
+//         alert("Incorrect");
+//         //deduct time here
+//     }
+// }
+// alert("You got " + score + "of " + questions.length);
+
+
 
 
 
@@ -105,7 +107,16 @@ document.getElementById("startButton").addEventListener("click",function() {
             clearInterval(timerInterval);
         }
     }, 1000)
-    //add first question prompt code here
+    //make the initial welcome div dissappear upon first click
+    const initialWelcomeNotice = document.getElementById("initialWelcome")
+    if (initialWelcomeNotice.style.display !== "none"){
+        initialWelcomeNotice.style.display = "none";
+    } else {
+        initialWelcomeNotice.style.display = "block";
+    }
 });
+
+
+
 
 
