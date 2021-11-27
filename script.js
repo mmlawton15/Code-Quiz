@@ -15,29 +15,51 @@
 
 
 //ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
-questions = [ "Arrays in Javascript can be used to store ___?"
-// , "Commonly used Data Types include ___.", 
-// "The condidtion in an if/else statement is enclosed with a ___", "A very useful tool used during development and debugging",
-// "String values must be enclosed with ___ when being assigned to variables.", "DOM stands for ___?",
-// "What is the difference between Javascript and HTML?", "CSS stands for ___?", "Which of the following are NOT forms of the command line?",
-// "Who created the World Wide Web?" 
-]
-answers = []
-arrayOfAnswers = []
+var questionDisplay = document.getElementById("questionPlaceholderSpace");
+var buttonDisplay = document.getElementById("banana");
+var listOfQuestionsAndAnswers = [
+     {
+         question: "Arrays in Javascript can be used to store ___?",
+         answerArray: ["Booleans", "Numbers and Strings", "Other Arrays", "All of the above"], answer: "All of the above"
+     },
+     {
+        question: "Commonly used Data Types include ___.",
+        answerArray: ["Booleans", "Strings", "Arrays", "All of the Above"], answer: "All of the Above"
+    },
+    {
+        question: "The condidtion in an if/else statement is enclosed with a ___",
+        answerArray: ["Bracket", "Curly Brace", "Parenthesis", "All of the above"], answer: "Parenthesis"
+    },
+    {
+        question: "A very useful tool used during development and debugging",
+        answerArray: ["Google", "For Loops", "Debugger", "all of the above"], answer: "All of the above"
+    },
+    {
+        question: "String values must be enclosed with ___ when being assigned to variables.",
+        answerArray: ["curly braces", "square brackets", "parentheses", "curly braces and parentheses"], answer: "Curly braces"
+    },
+    {
+        question: "DOM stands for ___?",
+        answerArray: ["Direct Optimized Model", "document Object Model", "Document Oblivion Matches", "Diligent Obtuse Monkey"], answer: "Document Object Model"
+    },
+    {
+        question: "What is the point of HTML?",
+        answerArray: ["HTML adds colors and fonts to a website", "HTML provides the basic layout of websites", "HTML adds logic to a website", "HTMl adds colors and logic to a website"], answer: "HTML proveds the basic layout of a website"
+    },
+    {
+        question: "CSS stands for ___?",
+        answerArray: ["Cartridge Section Styler", "Colorful Sheet Styler", "Cascading Style Sheets", "Card structure stylizer"], answer: "Cascading Style Sheets"
+    },
+    {
+        question: "Which of the following are NOT forms of the command line?",
+        answerArray: ["Kanban", "bash", "terminal", "all of the above"], answer: "Kanban"
+    },
+    {
+        question: "Who created the World Wide Web?",
+        answerArray: ["Tim Berners-Lee", "Steve Jobs", "Elon Musk", "Benjamin Franklin"], answer: "Tim Berners-Lee"
+    }
+ ]
 
-
- var listOfQuestionsAndAnswers = [["Arrays in Javascript can be used to store ___?",["Booleans", "Numbers and Strings", "Other Arrays", "All of the above"]],
-// ["Commonly used Data Types include ___.", ["Booleans", "Strings", "Arrays", "All of the Above"]],
-// ["The condidtion in an if/else statement is enclosed with a ___", ["Bracket", "Curly Brace", "Parenthesis", "All of the above"]],
-// ["A very useful tool used during development and debugging",["Google", "For Loops", "Debugger", "all of the above"]],
-// ["String values must be enclosed with ___ when being assigned to variables.", ["curly braces", "square brackets", "parentheses", "curly braces and parentheses"]],
-// ["DOM stands for ___?",["Direct Optimized Model", "document Object Model", "Document Oblivion Matches", "Diligent Obtuse Monkey"]],
-// ["What is the difference between Javascript and HTML?",["Javascript is the primary structure of a website, HTML adds dynamic content to the code", "HTML provides the primary structure of a website, while Javascript adds dynamic content to that HTML code", "HTML is ugly and javascript is pretty", "Javascript is easy and HTML is difficult"]],
-// ["CSS stands for ___?",["Cartridge Section Styler", "Colorful Sheet Styler", "Cascading Style Sheets", "Card structure stylizer"]],
-// ["Which of the following are NOT forms of the command line?", ["Kanban", "bash", "terminal", "all of the above"]],
-// ["Who created the World Wide Web?", ["Tim Berners-Lee, Steve Jobs, Elon Musk, Benjamin Franklin"]
-
-]
 var score = 0;
 
 
@@ -60,8 +82,6 @@ var score = 0;
 
 
 // TIMER CODE
-
-
 var time = 60
 var timerInterval;
 function tickTime() {
@@ -103,25 +123,31 @@ document.getElementById("startButton").addEventListener("click",function() {
 
 //randomized questions and answers function
     //randomized question function
-    function randomQuestions(questions) {
-        return questions[Math.floor(Math.random()*questions.length)];
+    function randomQuestions(listOfQuestionsAndAnswers) { //function pulling data from listOfQuestionsAndAnswers array (of objects)
+        return listOfQuestionsAndAnswers[Math.floor(Math.random()*listOfQuestionsAndAnswers.length)];// Does this just return the list of the questions or both questions and answers
     }
-    var chosenQuestion = randomQuestions(questions);
+    JSON.stringify(listOfQuestionsAndAnswers);
+    var chosenQuestion = randomQuestions(listOfQuestionsAndAnswers);
     document.getElementById("questionPlaceholderSpace").innerHTML = chosenQuestion;
 
+
+
+
+
+
     //answers in button function. i would like to make the order of these random but need to figure out how to change the content inside of them first
-    function answersInButton(listOfQuestionsAndAnswers){
-        if (chosenQuestion = listOfQuestionsAndAnswers[0]) { //if the question matches the question above, reference the array inside of this element of the list of questions and answers array
-            console.log(listOfQuestionsAndAnswers[0][0]);
-            document.getElementById("option1").innerText = (listOfQuestionsAndAnswers[0][0])
-            console.log(listOfQuestionsAndAnswers[0][1]);
-            document.getElementById("option2").innerText = (listOfQuestionsAndAnswers[0][1])//make button values equal to the items in the array of the question
-            console.log(listOfQuestionsAndAnswers[0][2]);
-            document.getElementById("option3").innerText = (listOfQuestionsAndAnswers[0][2])
-            console.log(listOfQuestionsAndAnswers[0][3]);
-            document.getElementById("option4").innerText = (listOfQuestionsAndAnswers[0][3])
-        };
-    }
+    // function answersInButton(listOfQuestionsAndAnswers){
+    //     if (chosenQuestion = listOfQuestionsAndAnswers[0]) { //if the question matches the question above, reference the array inside of this element of the list of questions and answers array
+    //         console.log(listOfQuestionsAndAnswers[0][0]);
+    //         document.getElementById("option1").innerText = (listOfQuestionsAndAnswers[0][0])
+    //         console.log(listOfQuestionsAndAnswers[0][1]);
+    //         document.getElementById("option2").innerText = (listOfQuestionsAndAnswers[0][1])//make button values equal to the items in the array of the question
+    //         console.log(listOfQuestionsAndAnswers[0][2]);
+    //         document.getElementById("option3").innerText = (listOfQuestionsAndAnswers[0][2])
+    //         console.log(listOfQuestionsAndAnswers[0][3]);
+    //         document.getElementById("option4").innerText = (listOfQuestionsAndAnswers[0][3])
+    //     };
+    // }
     
 
 
