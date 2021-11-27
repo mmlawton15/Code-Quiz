@@ -15,12 +15,16 @@
 
 
 //ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
-var questionDisplay = document.getElementById("questionPlaceholderSpace");
-var buttonDisplay = document.getElementById("banana");
-var buttonOneDisplay = document.getElementById("banana1");
-var buttonTwoDisplay = document.getElementById("banana2");
-var buttonThreeDisplay = document.getElementById("banana3");
-var listOfQuestionsAndAnswers = [
+let questionDisplay = document.getElementById("questionPlaceholderSpace");
+var buttonZero = (document.getElementById("banana"));
+var buttonOne = (document.getElementById("banana1"));
+var buttonTwo = (document.getElementById("banana2"));
+var buttonThree = (document.getElementById("banana3"));
+var currentQuestionIndex = 0;
+var currentQuestion;
+var emptyButtonArray = []//push all the buttons into this array. array.answer.
+
+let listOfQuestionsAndAnswers = [
      {
          question: "Arrays in Javascript can be used to store ___?",
          answerArray: ["Booleans", "Numbers and Strings", "Other Arrays", "All of the above"], answer: "All of the above"
@@ -47,7 +51,7 @@ var listOfQuestionsAndAnswers = [
     },
     {
         question: "What is the point of HTML?",
-        answerArray: ["HTML adds colors and fonts to a website", "HTML provides the basic layout of websites", "HTML adds logic to a website", "HTMl adds colors and logic to a website"], answer: "HTML proveds the basic layout of a website"
+        answerArray: ["HTML adds colors and fonts to a website", "HTML provides the basic layout of websites", "HTML adds logic to a website", "HTMl adds colors and logic to a website"], answer:"HTML proveds the basic layout of a website"
     },
     {
         question: "CSS stands for ___?",
@@ -65,20 +69,6 @@ var listOfQuestionsAndAnswers = [
 
 var score = 0;
 
-
-
-//LOOP FOR QUESTIONS
-// for (var i=0; i <questions.length; i++){
-//     var answers = window.prompt(questions[i].prompt);
-//     if(response == questions[i].answer){
-//         score++;
-//         alert("Correct");
-//     } else {
-//         alert("Incorrect");
-//         //deduct time here
-//     }
-// }
-// alert("You got " + score + "of " + questions.length);
 
 
 // TIMER CODE
@@ -120,43 +110,118 @@ document.getElementById("startButton").addEventListener("click",function() {
     } else {
         pFormatting.style.display = 'block';
     }
+});//END OF START BUTTON CODE
 
 
-
-//randomized questions and answers in text areasfunction
-    function randomQuestions(listOfQuestionsAndAnswers) { //function pulling data from listOfQuestionsAndAnswers array
-        return listOfQuestionsAndAnswers[Math.floor(Math.random()*listOfQuestionsAndAnswers.length)];
-    }
-
-    var chosenQuestion = randomQuestions(listOfQuestionsAndAnswers); //code to set the text elements to the objects inside the array
-    questionDisplay.innerHTML = chosenQuestion.question;
-    buttonDisplay.innerHTML = chosenQuestion.answerArray[0]; //set the text in the button to the first object in the array
-    //get the value of this button in preparation to check it against the answer
-    buttonOneDisplay.innerHTML = chosenQuestion.answerArray[1];
-    buttonTwoDisplay.innerHTML = chosenQuestion.answerArray[2];
-    buttonThreeDisplay.innerHTML = chosenQuestion.answerArray[3];
+//questions and answers in text areas function
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[0].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[0].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[0].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[0].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[0].answerArray[3];
     
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[1].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[1].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[1].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[1].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[1].answerArray[3];  
 
-//code for if a button is clicked, present a new question
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[2].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[2].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[2].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[2].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[2].answerArray[3];
+
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[3].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[3].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[3].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[3].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[3].answerArray[3];
+
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[4].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[4].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[4].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[4].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[4].answerArray[3];
+
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[5].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[5].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[5].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[5].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[5].answerArray[3];
+
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[6].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[6].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[6].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[6].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[6].answerArray[3];
+
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[7].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[7].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[7].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[7].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[7].answerArray[3];
+
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[8].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[8].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[8].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[8].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[8].answerArray[3];
+
+    questionDisplay.innerHTML = listOfQuestionsAndAnswers[9].question;
+    buttonZero.textContent = listOfQuestionsAndAnswers[9].answerArray[0]; //set the text in the button to the first object in the array
+    buttonOne.textContent = listOfQuestionsAndAnswers[9].answerArray[1];
+    buttonTwo.textContent = listOfQuestionsAndAnswers[9].answerArray[2];
+    buttonThree.textContent = listOfQuestionsAndAnswers[9].answerArray[3];
 
 
-
+        //for loop with event listeners for each button
 
 
 //code loop for playing the quiz    
     // while (time >= 0); {//need to add the or statement for OR all the questions have looped through, run the code for the quiz    
-    // }
+    // } //add true or fals,e when timer is 0 the value is false OR when you go through all the questions the value is false
 
 
 
 
 
-});//END OF START BUTTON CODE
+
+
+
+function grabQuestion() {
+    questionDisplay = listOfQuestionsAndAnswers[currentQuestionIndex].question; //code to pick the question.
+    while(currentQuestionIndex < listOfQuestionsAndAnswers.length){ //while we haven't filtered through all the questions, keep going
+        for (let i = 0; i < listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){  //as long as i is less than the length of teh questions, keep going
+            answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
+            emptyButtonArray.addEventListener("click", answerCheck);
+        }
+    }{
+        endGame();
+    }   
+}
+
+
+function answerCheck (answer){ //function to check if the answer is correct
+    console.log(answer);
+    if (answer == listOfQuestionsAndAnswers[currentQuestionIndex].answer){
+        currentQuestionIndex++;
+        score +1;
+        document.getElementById("correctOrIncorrect").innerHTML = "CORRECT";
+    } else {
+        time = time -10;
+        currentQuestionIndex++;
+        document.getElementById("correctOrIncorrect").innerHTML - "INCORRECT";
+    }
+    grabQuestion();
+}
 
 
 
 
+function endGame() {
 
+}
 
 
 
