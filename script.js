@@ -78,9 +78,6 @@ var score = 0;
 // alert("You got " + score + "of " + questions.length);
 
 
-
-
-
 // TIMER CODE
 var time = 60
 var timerInterval;
@@ -121,41 +118,15 @@ document.getElementById("startButton").addEventListener("click",function() {
         pFormatting.style.display = 'block';
     }
 
+
+
 //randomized questions and answers function
     //randomized question function
     function randomQuestions(listOfQuestionsAndAnswers) { //function pulling data from listOfQuestionsAndAnswers array (of objects)
         return listOfQuestionsAndAnswers[Math.floor(Math.random()*listOfQuestionsAndAnswers.length)];// Does this just return the list of the questions or both questions and answers
     }
-    JSON.stringify(listOfQuestionsAndAnswers);
     var chosenQuestion = randomQuestions(listOfQuestionsAndAnswers);
-    document.getElementById("questionPlaceholderSpace").innerHTML = chosenQuestion;
-
-
-
-
-
-
-    //answers in button function. i would like to make the order of these random but need to figure out how to change the content inside of them first
-    // function answersInButton(listOfQuestionsAndAnswers){
-    //     if (chosenQuestion = listOfQuestionsAndAnswers[0]) { //if the question matches the question above, reference the array inside of this element of the list of questions and answers array
-    //         console.log(listOfQuestionsAndAnswers[0][0]);
-    //         document.getElementById("option1").innerText = (listOfQuestionsAndAnswers[0][0])
-    //         console.log(listOfQuestionsAndAnswers[0][1]);
-    //         document.getElementById("option2").innerText = (listOfQuestionsAndAnswers[0][1])//make button values equal to the items in the array of the question
-    //         console.log(listOfQuestionsAndAnswers[0][2]);
-    //         document.getElementById("option3").innerText = (listOfQuestionsAndAnswers[0][2])
-    //         console.log(listOfQuestionsAndAnswers[0][3]);
-    //         document.getElementById("option4").innerText = (listOfQuestionsAndAnswers[0][3])
-    //     };
-    // }
-    
-
-
-
-
-
-
-
+    questionDisplay.innerHTML = chosenQuestion.question;
 
 
 
