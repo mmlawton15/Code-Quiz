@@ -95,7 +95,6 @@ document.getElementById("startButton").addEventListener("click",function() {
         questionFormatting.style.display = "block"; //if the section is not showing, show it
     }
     var pFormatting = document.getElementById("correctOrIncorrect");
-    var pDisplaySetting = pFormatting.style.display;
     if (displaySetting == 'block'){
         pFormatting.style.display = "none";
     } else {
