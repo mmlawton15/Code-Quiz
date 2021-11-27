@@ -49,6 +49,27 @@ header div {
     width:auto;   
 }
 
+
+
+
+
+/*QUESTION FORMATTING*/
+.questionFormat {
+    height: auto;
+    width: auto;
+    margin: auto;
+    text-align: center;
+    background-color:teal;
+    display:none;
+}
+
+.questionFormat h2 {
+    color:var(--dark-purple);
+}
+
+
+
+
 /* div {
     background-color:whitesmoke;
     /* border-width:1px;
@@ -56,9 +77,11 @@ header div {
     border-color:grey;
 } */
 
-/*CARD DETAILS*/
 
-.card {
+
+
+/*CARD DETAILS*/
+/* .card {
     font-size: 18px;
     margin: auto;
     max-width: 800px;
@@ -70,4 +93,4 @@ header div {
 .card h1 {
     background-color: var(--dark-purple);
     color: (white)
-}
+} */
