@@ -18,13 +18,13 @@
 
 var questions = [
     {
-        question: "Arrays in Javascript can be used to store ___?",
-        answers: ("Booleans", "Numbers and Strings", "Other Arrays", "All of the above"),
-        correctAnswer: "All of the Above",
+        questionOne: "Arrays in Javascript can be used to store ___?",
+        answersOne: ("Booleans", "Numbers and Strings", "Other Arrays", "All of the above"),
+        correctAnswerOne: "All of the Above"
     },
     {   question: "Commonly used Data Types include ___.",
         answers: ("Booleans", "Strings", "Arrays", "All of the Above"),
-        correctAnswer: "All of the Above",
+        correctAnswer: "All of the Above"
     },
     {
         question: "The condidtion in an if/else statement is enclosed with a ___",
@@ -34,12 +34,12 @@ var questions = [
     {
         question: "A very useful tool used during development and debugging",
         answers: ("Google", "For Loops", "Debugger", "all of the above"),
-        correctAnswer: "All of the above",
+        correctAnswer: "All of the above"
     },
     {
         question: "String values must be enclosed with ___ when being assigned to variables.",
         answers: ("curly braces", "square brackets", "parentheses", "curly braces and parentheses"),
-        correctAnswer: "Curly braces",
+        correctAnswer: "Curly braces"
     },
     {
         question: "DOM stands for ___?",
@@ -54,17 +54,17 @@ var questions = [
     {
         question: "CSS stands for ___?",
         answers: ("Cartridge Section Styler", "Colorful Sheet Styler", "Cascading Style Sheets", "Card structure stylizer"),
-        correctAnswer: "Cascading Style Sheets",
+        correctAnswer: "Cascading Style Sheets"
     },
     {
         question: "Which of the following are NOT forms of the command line?",
         answers: ("Kanban", "bash", "terminal", "all of the above"),
-        correctAnswer: "Kanban",
+        correctAnswer: "Kanban"
     },
     {
         question: "Who created the World Wide Web?",
         answers: "Tim Berners-Lee, Steve Jobs, Elon Musk, Benjamin Franklin",
-        correctAnswer: "Tim Berners-Lee",
+        correctAnswer: "Tim Berners-Lee"
     },
 ];
 
@@ -112,15 +112,14 @@ document.getElementById("startButton").addEventListener("click",function() {
             clearInterval(timerInterval);
         }
     }, 1000)
-
-    const initialWelcomeNotice = document.getElementById("initialWelcome") //make the welcome dissappear when the button is clicked
+//make the welcome dissappear when the button is clicked
+    const initialWelcomeNotice = document.getElementById("initialWelcome") 
     if (initialWelcomeNotice.style.display !== "none"){
         initialWelcomeNotice.style.display = "none";
     } else {
         initialWelcomeNotice.style.display = "block";
     }
-
-    //present the first question once the button is clicked, make it go from invisible to visible
+//make the question section visible
     var questionFormatting = document.getElementById("questionFormattingID"); //get the question section
     var displaySetting = questionFormatting.style.display; //get the current value of the div's display
     if (displaySetting =='block'){
@@ -128,11 +127,13 @@ document.getElementById("startButton").addEventListener("click",function() {
     } else {
         questionFormatting.style.display = "block"; //if the section is not showing, show it
     }
-
 });
 
 
 //FIRST QUESTION CODE
+questionSpot = document.getElementsByTagName("questionPlaceholderSpace");
+
+
 
 
 
