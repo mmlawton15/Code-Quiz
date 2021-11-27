@@ -16,57 +16,66 @@
 
 //ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
 
-var questions = [
-    {
-        questionOne: "Arrays in Javascript can be used to store ___?",
-        answersOne: ("Booleans", "Numbers and Strings", "Other Arrays", "All of the above"),
-        correctAnswerOne: "All of the Above"
-    },
-    {   question: "Commonly used Data Types include ___.",
-        answers: ("Booleans", "Strings", "Arrays", "All of the Above"),
-        correctAnswer: "All of the Above"
-    },
-    {
-        question: "The condidtion in an if/else statement is enclosed with a ___",
-        answers: ("Bracket", "Curly Brace", "Parenthesis", "All of the above"),
-        correctAnswer: "Parenthesis"
-    },
-    {
-        question: "A very useful tool used during development and debugging",
-        answers: ("Google", "For Loops", "Debugger", "all of the above"),
-        correctAnswer: "All of the above"
-    },
-    {
-        question: "String values must be enclosed with ___ when being assigned to variables.",
-        answers: ("curly braces", "square brackets", "parentheses", "curly braces and parentheses"),
-        correctAnswer: "Curly braces"
-    },
-    {
-        question: "DOM stands for ___?",
-        answers: ("Direct Optimized Model", "document Object Model", "Document Oblivion Matches", "Diligent Obtuse Monkey"),
-        correctAnswer: "Document Object Model"
-    },
-    {
-        question: "What is the difference between Javascript and HTML?",
-        answers: ("Javascript is the primary structure of a website, HTML adds dynamic content to the code", "HTML provides the primary structure of a website, while Javascript adds dynamic content to that HTML code", "HTML is ugly and javascript is pretty", "Javascript is easy and HTML is difficult"),
-        correctAnswer: "HTML provides the primary structure of a website, while Javascript adds dynamic content to that HTML code"
-    },
-    {
-        question: "CSS stands for ___?",
-        answers: ("Cartridge Section Styler", "Colorful Sheet Styler", "Cascading Style Sheets", "Card structure stylizer"),
-        correctAnswer: "Cascading Style Sheets"
-    },
-    {
-        question: "Which of the following are NOT forms of the command line?",
-        answers: ("Kanban", "bash", "terminal", "all of the above"),
-        correctAnswer: "Kanban"
-    },
-    {
-        question: "Who created the World Wide Web?",
-        answers: "Tim Berners-Lee, Steve Jobs, Elon Musk, Benjamin Franklin",
-        correctAnswer: "Tim Berners-Lee"
-    },
-];
+//I COMMENTED THIS OUT FOR THE TIME BEING
+var pineapple = ("Arrays in Javascript can be used to store ___?");
+var banana = ("Booleans")
+// questions = [ "Arrays in Javascript can be used to store ___?", "Commonly used Data Types include ___.", 
+// "The condidtion in an if/else statement is enclosed with a ___", "A very useful tool used during development and debugging",
+// "String values must be enclosed with ___ when being assigned to variables.", "DOM stands for ___?",
+// "What is the difference between Javascript and HTML?", "CSS stands for ___?", "Which of the following are NOT forms of the command line?",
+// "Who created the World Wide Web?"
+
+//I COMMENTED THIS OUT BECAUSE I AM TRYING TO FIGURE OUT ARRAYS AND HOW TO HANDLE THIS. THINKING I AM GOING TO NEED TO CREATE 10 ARRAYS WITH SPECIFIED ANSWERS
+    // {
+    //     questionOne: "Arrays in Javascript can be used to store ___?",
+    //     answersOne: ("Booleans", "Numbers and Strings", "Other Arrays", "All of the above"),
+    //     correctAnswerOne: "All of the Above"
+    // },
+    // {   question: "Commonly used Data Types include ___.",
+    //     answers: ("Booleans", "Strings", "Arrays", "All of the Above"),
+    //     correctAnswer: "All of the Above"
+    // },
+    // {
+    //     question: "The condidtion in an if/else statement is enclosed with a ___",
+    //     answers: ("Bracket", "Curly Brace", "Parenthesis", "All of the above"),
+    //     correctAnswer: "Parenthesis"
+    // },
+    // {
+    //     question: "A very useful tool used during development and debugging",
+    //     answers: ("Google", "For Loops", "Debugger", "all of the above"),
+    //     correctAnswer: "All of the above"
+    // },
+    // {
+    //     question: "String values must be enclosed with ___ when being assigned to variables.",
+    //     answers: ("curly braces", "square brackets", "parentheses", "curly braces and parentheses"),
+    //     correctAnswer: "Curly braces"
+    // },
+    // {
+    //     question: "DOM stands for ___?",
+    //     answers: ("Direct Optimized Model", "document Object Model", "Document Oblivion Matches", "Diligent Obtuse Monkey"),
+    //     correctAnswer: "Document Object Model"
+    // },
+    // {
+    //     question: "What is the difference between Javascript and HTML?",
+    //     answers: ("Javascript is the primary structure of a website, HTML adds dynamic content to the code", "HTML provides the primary structure of a website, while Javascript adds dynamic content to that HTML code", "HTML is ugly and javascript is pretty", "Javascript is easy and HTML is difficult"),
+    //     correctAnswer: "HTML provides the primary structure of a website, while Javascript adds dynamic content to that HTML code"
+    // },
+    // {
+    //     question: "CSS stands for ___?",
+    //     answers: ("Cartridge Section Styler", "Colorful Sheet Styler", "Cascading Style Sheets", "Card structure stylizer"),
+    //     correctAnswer: "Cascading Style Sheets"
+    // },
+    // {
+    //     question: "Which of the following are NOT forms of the command line?",
+    //     answers: ("Kanban", "bash", "terminal", "all of the above"),
+    //     correctAnswer: "Kanban"
+    // },
+    // {
+    //     question: "Who created the World Wide Web?",
+    //     answers: "Tim Berners-Lee, Steve Jobs, Elon Musk, Benjamin Franklin",
+    //     correctAnswer: "Tim Berners-Lee"
+    // },
+//];
 
 
 //VARIABLES
@@ -127,11 +136,14 @@ document.getElementById("startButton").addEventListener("click",function() {
     } else {
         questionFormatting.style.display = "block"; //if the section is not showing, show it
     }
+//make the question section display a variable value
+    document.getElementById("questionPlaceholderSpace").textContent = pineapple;
+    document.getElementById("option1").textContent = banana;
 });
 
 
 //FIRST QUESTION CODE
-questionSpot = document.getElementsByTagName("questionPlaceholderSpace");
+
 
 
 
