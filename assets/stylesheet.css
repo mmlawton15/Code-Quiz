@@ -49,6 +49,11 @@ header div {
     width:auto;   
 }
 
+.optionButton {
+    background-color:rebeccapurple;
+    color:white;
+    border-radius: 4px;
+}
 
 
 
@@ -59,17 +64,22 @@ header div {
     width: auto;
     margin: auto;
     text-align: center;
-    background-color:teal;
     display:none;
 }
 
 .questionFormat h2 {
-    color:var(--dark-purple);
+    color:rebeccapurple;
 }
 
 .questionFormat button {
     display: block;
     margin: 0 auto;
+}
+
+p {
+    display:none;
+    color: rebeccapurple;
+    text-align: center;
 }
 
 
