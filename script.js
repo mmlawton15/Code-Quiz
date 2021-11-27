@@ -2,7 +2,7 @@
 // DONE - WHEN I click the start button
 // DONE - THEN a timer starts 
 // DONE - SIMULTANEOUSLY I am presented with a question
-// THIS question has 4 multiple choice ANSWRS
+// DONE - THIS question has 4 multiple choice ANSWRS
 // WHEN I answer a question
 // THEN I am presented with another question
 // WHEN I answer a question incorrectly
@@ -17,6 +17,9 @@
 //ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
 var questionDisplay = document.getElementById("questionPlaceholderSpace");
 var buttonDisplay = document.getElementById("banana");
+var buttonOneDisplay = document.getElementById("banana1");
+var buttonTwoDisplay = document.getElementById("banana2");
+var buttonThreeDisplay = document.getElementById("banana3");
 var listOfQuestionsAndAnswers = [
      {
          question: "Arrays in Javascript can be used to store ___?",
@@ -52,7 +55,7 @@ var listOfQuestionsAndAnswers = [
     },
     {
         question: "Which of the following are NOT forms of the command line?",
-        answerArray: ["Kanban", "bash", "terminal", "all of the above"], answer: "Kanban"
+        answerArray: ["Kanban", "Bash", "Terminal", "All of the above"], answer: "Kanban"
     },
     {
         question: "Who created the World Wide Web?",
@@ -120,13 +123,29 @@ document.getElementById("startButton").addEventListener("click",function() {
 
 
 
-//randomized questions and answers function
-    //randomized question function
-    function randomQuestions(listOfQuestionsAndAnswers) { //function pulling data from listOfQuestionsAndAnswers array (of objects)
-        return listOfQuestionsAndAnswers[Math.floor(Math.random()*listOfQuestionsAndAnswers.length)];// Does this just return the list of the questions or both questions and answers
+//randomized questions and answers in text areasfunction
+    function randomQuestions(listOfQuestionsAndAnswers) { //function pulling data from listOfQuestionsAndAnswers array
+        return listOfQuestionsAndAnswers[Math.floor(Math.random()*listOfQuestionsAndAnswers.length)];
     }
-    var chosenQuestion = randomQuestions(listOfQuestionsAndAnswers);
+
+    var chosenQuestion = randomQuestions(listOfQuestionsAndAnswers); //code to set the text elements to the objects inside the array
     questionDisplay.innerHTML = chosenQuestion.question;
+    buttonDisplay.innerHTML = chosenQuestion.answerArray[0]; //set the text in the button to the first object in the array
+    //get the value of this button in preparation to check it against the answer
+    buttonOneDisplay.innerHTML = chosenQuestion.answerArray[1];
+    buttonTwoDisplay.innerHTML = chosenQuestion.answerArray[2];
+    buttonThreeDisplay.innerHTML = chosenQuestion.answerArray[3];
+    
+
+//code for if a button is clicked, present a new question
+
+
+
+
+
+//code loop for playing the quiz    
+    // while (time >= 0); {//need to add the or statement for OR all the questions have looped through, run the code for the quiz    
+    // }
 
 
 
