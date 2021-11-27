@@ -107,11 +107,10 @@ document.getElementById("startButton").addEventListener("click",function() {
     function randomQuestions(questions) {
         return questions[Math.floor(Math.random()*questions.length)];
     }
-    console.log(randomQuestions(questions));
     var chosenQuestion = randomQuestions(questions);
     document.getElementById("questionPlaceholderSpace").innerHTML = chosenQuestion;
 
-    //randomized answers in button function
+    //answers in button function. i would like to make the order of these random but need to figure out how to change the content inside of them first
     function answersInButton(listOfQuestionsAndAnswers){
         if (chosenQuestion = listOfQuestionsAndAnswers[0]) { //if the question matches the question above, reference the array inside of this element of the list of questions and answers array
             console.log(listOfQuestionsAndAnswers[0][0]);
