@@ -82,7 +82,7 @@ header div {
     color: white;
 }
 
-p {
+.questionFormat p {
     display:none;
     color: rebeccapurple;
     text-align: center;
