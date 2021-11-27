@@ -1,8 +1,8 @@
 // DONE - GIVEN I am taking a code quiz
-// WHEN I click the start button
+// DONE - WHEN I click the start button
 // DONE - THEN a timer starts 
-// SIMULTANEOUSLY I am presented with a question
-// THIS question has 4 multiple choice questions
+// DONE - SIMULTANEOUSLY I am presented with a question
+// THIS question has 4 multiple choice ANSWRS
 // WHEN I answer a question
 // THEN I am presented with another question
 // WHEN I answer a question incorrectly
