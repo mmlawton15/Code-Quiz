@@ -14,7 +14,8 @@
 
 
 
-//ARRAY OF QUESTIONS
+//ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
+
 var questions = [
     {
         question: "Arrays in Javascript can be used to store ___?",
@@ -66,7 +67,12 @@ var questions = [
         correctAnswer: "Tim Berners-Lee",
     },
 ];
+
+
+//VARIABLES
 var score = 0;
+
+
 
 
 
@@ -91,7 +97,6 @@ var score = 0;
 // TIMER CODE
 var time = 60
 var timerInterval;
-
 function tickTime() {
     time = time -1
     document.getElementById('timerStart').innerHTML = time;
@@ -100,23 +105,34 @@ function tickTime() {
 
 //START BUTTON CODE
 document.getElementById("startButton").addEventListener("click",function() { 
-    timerInterval = setInterval(() => {
+    timerInterval = setInterval(() => { //start timer once the button is clicked
         if (time > 0) {
             tickTime();
         } else {
             clearInterval(timerInterval);
         }
     }, 1000)
-    //make the initial welcome div dissappear upon first click
-    const initialWelcomeNotice = document.getElementById("initialWelcome")
+
+    const initialWelcomeNotice = document.getElementById("initialWelcome") //make the welcome dissappear when the button is clicked
     if (initialWelcomeNotice.style.display !== "none"){
         initialWelcomeNotice.style.display = "none";
     } else {
         initialWelcomeNotice.style.display = "block";
     }
+
+    //present the first question once the button is clicked, make it go from invisible to visible
+    var questionFormatting = document.getElementById("questionFormattingID"); //get the question section
+    var displaySetting = questionFormatting.style.display; //get the current value of the div's display
+    if (displaySetting =='block'){
+        questionFormatting.style.display = "none"; //if the section is showing, hide it
+    } else {
+        questionFormatting.style.display = "block"; //if the section is not showing, show it
+    }
+
 });
 
 
+//FIRST QUESTION CODE
 
 
 
