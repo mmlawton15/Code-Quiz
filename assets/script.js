@@ -16,10 +16,7 @@
 
 //ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
 let questionDisplay = document.getElementById("questionPlaceholderSpace");
-var buttonZero = (document.getElementById("banana"));
-var buttonOne = (document.getElementById("banana1"));
-var buttonTwo = (document.getElementById("banana2"));
-var buttonThree = (document.getElementById("banana3"));
+let buttons = document.getElementsByClassName("optionButton");
 var currentQuestionIndex = 0;
 var currentQuestion;
 var emptyButtonArray = []//push all the buttons into this array. answerArray.answer. IM CONFUSED WHY I WOULD DO THIS, is it to set all of the values of the buttons to whatever array number they're assigned to?
@@ -113,7 +110,7 @@ function startGame(){
         }
     }
     ) 
-    
+    grabQuestion();
 };
 
 
@@ -125,69 +122,68 @@ function endGame() {
 
 
 //questions and answers in text areas function
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[0].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[0].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[0].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[0].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[0].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[0].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[0].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[0].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[0].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[0].answerArray[3];
     
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[1].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[1].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[1].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[1].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[1].answerArray[3];  
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[1].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[1].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[1].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[1].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[1].answerArray[3];  
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[2].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[2].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[2].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[2].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[2].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[2].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[2].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[2].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[2].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[2].answerArray[3];
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[3].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[3].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[3].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[3].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[3].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[3].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[3].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[3].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[3].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[3].answerArray[3];
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[4].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[4].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[4].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[4].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[4].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[4].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[4].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[4].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[4].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[4].answerArray[3];
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[5].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[5].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[5].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[5].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[5].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[5].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[5].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[5].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[5].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[5].answerArray[3];
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[6].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[6].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[6].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[6].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[6].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[6].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[6].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[6].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[6].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[6].answerArray[3];
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[7].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[7].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[7].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[7].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[7].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[7].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[7].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[7].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[7].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[7].answerArray[3];
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[8].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[8].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[8].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[8].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[8].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[8].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[8].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[8].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[8].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[8].answerArray[3];
 
-    questionDisplay.innerHTML = listOfQuestionsAndAnswers[9].question;
-    buttonZero.textContent = listOfQuestionsAndAnswers[9].answerArray[0]; //set the text in the button to the first object in the array
-    buttonOne.textContent = listOfQuestionsAndAnswers[9].answerArray[1];
-    buttonTwo.textContent = listOfQuestionsAndAnswers[9].answerArray[2];
-    buttonThree.textContent = listOfQuestionsAndAnswers[9].answerArray[3];
+    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[9].question;
+    // buttonZero.textContent = listOfQuestionsAndAnswers[9].answerArray[0]; //set the text in the button to the first object in the array
+    // buttonOne.textContent = listOfQuestionsAndAnswers[9].answerArray[1];
+    // buttonTwo.textContent = listOfQuestionsAndAnswers[9].answerArray[2];
+    // buttonThree.textContent = listOfQuestionsAndAnswers[9].answerArray[3];
 
 
         //for loop with event listeners for each button
-
 
 
 function grabQuestion() {
@@ -205,6 +201,7 @@ function grabQuestion() {
     // }{
     //     endGame();
     // }   
+    answerCheck();
 }
 
 
@@ -220,6 +217,7 @@ function answerCheck (){ //function to check if the answer is correct
         currentQuestionIndex++;
         document.getElementById("correctOrIncorrect").innerHTML - "INCORRECT";
     }
+    grabQuestion();
 }
 
 
@@ -229,6 +227,6 @@ function answerCheck (){ //function to check if the answer is correct
 
 
 startGame();
-grabQuestion();
+//grabQuestion();
 
 
