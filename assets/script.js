@@ -22,7 +22,7 @@ var buttonTwo = (document.getElementById("banana2"));
 var buttonThree = (document.getElementById("banana3"));
 var currentQuestionIndex = 0;
 var currentQuestion;
-var emptyButtonArray = []//push all the buttons into this array. array.answer.
+var emptyButtonArray = []//push all the buttons into this array. answerArray.answer. IM CONFUSED WHY I WOULD DO THIS, is it to set all of the values of the buttons to whatever array number they're assigned to?
 
 let listOfQuestionsAndAnswers = [
      {
@@ -90,16 +90,16 @@ function startGame(){
                 clearInterval(timerInterval);
             }
         }, 1000)
-        //make the welcome dissappear when the button is clicked
+    //make the welcome dissappear when the button is clicked
         const initialWelcomeNotice = document.getElementById("initialWelcome") 
         if (initialWelcomeNotice.style.display !== "none"){
             initialWelcomeNotice.style.display = "none";
         } else {
             initialWelcomeNotice.style.display = "block";
         }
-        //make the question section visible
+    //make the question section visible
         var questionFormatting = document.getElementById("questionFormattingID"); //get the question section
-        var displaySetting = questionFormatting.style.display; //get the current value of the div's display
+        var displaySetting = questionFormatting.style.display; //get the current value of the div's display style
         if (displaySetting =='block'){
             questionFormatting.style.display = "none"; //if the section is showing, hide it
         } else {
@@ -113,8 +113,16 @@ function startGame(){
         }
     }
     ) 
+    
 };
-grabQuestion;
+
+
+
+//END GAME FUNCTION
+function endGame() {
+
+}
+
 
 //questions and answers in text areas function
     questionDisplay.innerHTML = listOfQuestionsAndAnswers[0].question;
@@ -181,29 +189,27 @@ grabQuestion;
         //for loop with event listeners for each button
 
 
-//code loop for playing the quiz    
-    // while (time >= 0); {//need to add the or statement for OR all the questions have looped through, run the code for the quiz    
-    // } //add true or fals,e when timer is 0 the value is false OR when you go through all the questions the value is false
-
-
 
 function grabQuestion() {
-    questionDisplay = listOfQuestionsAndAnswers[currentQuestionIndex].question; //code to pick the question.
-    while(currentQuestionIndex < listOfQuestionsAndAnswers.length){ //while we haven't filtered through all the questions, keep going
-        for (let i = 0; i < listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){  //as long as i is less than the length of teh questions, keep going
-            answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
-            emptyButtonArray.addEventListener("click", answerCheck);
-        }
-    }{
-        endGame();
-    }   
+    console.log(time);
+    currentQuestion = listOfQuestionsAndAnswers[currentQuestionIndex].question;
+    questionDisplay.textContent = currentQuestion;
+    console.log(currentQuestion); //how do i make the buttons match the items on the array?
+
+    // questionDisplay = listOfQuestionsAndAnswers[currentQuestionIndex].question; //set the question space to equal the question
+    // while(currentQuestionIndex < listOfQuestionsAndAnswers.length || time >0){ //while we haven't filtered through all the questions and the timer is running
+    //     for (let i = 0; i < listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){  //as long as i is less than the length of teh questions, keep going
+    //         answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
+    //         //emptyButtonArray.addEventListener("click", answerCheck);
+    //     }
+    // }{
+    //     endGame();
+    // }   
 }
 
 
 
-
-
-function answerCheck (answer){ //function to check if the answer is correct
+function answerCheck (){ //function to check if the answer is correct
     console.log(answer);
     if (answer == listOfQuestionsAndAnswers[currentQuestionIndex].answer){
         currentQuestionIndex++;
@@ -214,17 +220,15 @@ function answerCheck (answer){ //function to check if the answer is correct
         currentQuestionIndex++;
         document.getElementById("correctOrIncorrect").innerHTML - "INCORRECT";
     }
-    grabQuestion();
 }
 
 
 
 
-function endGame() {
 
-}
 
 
 startGame();
+grabQuestion();
 
 
