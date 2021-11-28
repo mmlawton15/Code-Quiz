@@ -140,7 +140,7 @@ function grabQuestion() {
                 let target = event.target;
                 if (target.matches('button')){
                     value = target.innerHTML
-                    console.log(value + " button was clicked");
+                    console.log(value + " button was clicked"); //I THINK I NEED TO LOOK AT THIS IF STATEMENT ITS SUSPICIOUS/IDK WHAT EXACTLY ITS PURPOSE IS
                 };
                 console.log(userAnswer);
                 answerCheck();
