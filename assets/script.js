@@ -190,7 +190,19 @@ function grabQuestion() {
     console.log(time);
     currentQuestion = listOfQuestionsAndAnswers[currentQuestionIndex].question;
     questionDisplay.textContent = currentQuestion;
-    console.log(currentQuestion); //how do i make the buttons match the items on the array?
+    console.log(currentQuestion);
+
+    buttons.innerHTML = ""; //set the buttons to an empty string so they don't hold onto previous data
+
+        for (let i=0; i <listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){
+            answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
+            let buttonBanana = document.createElement("button"); //create a button
+            buttonBanana.type ="submit"; //sets it up tp submit a value when clicked
+            buttonBanana.name = "formBtn"; //name
+            buttons.append(buttonBanana); //appends buttonBanana to buttons, or to the div in the html
+
+            buttons.addEventListener("click", answerCheck);
+        }
 
     // questionDisplay = listOfQuestionsAndAnswers[currentQuestionIndex].question; //set the question space to equal the question
     // while(currentQuestionIndex < listOfQuestionsAndAnswers.length || time >0){ //while we haven't filtered through all the questions and the timer is running
@@ -208,10 +220,10 @@ function grabQuestion() {
 
 function answerCheck (){ //function to check if the answer is correct
     console.log(answer);
-    if (answer == listOfQuestionsAndAnswers[currentQuestionIndex].answer){
-        currentQuestionIndex++;
-        score +1;
-        document.getElementById("correctOrIncorrect").innerHTML = "CORRECT";
+    if (answer == listOfQuestionsAndAnswers[currentQuestionIndex].answer){ //if the answer is correct
+        currentQuestionIndex++; //move to the next question
+        score +1; //increase score
+        document.getElementById("correctOrIncorrect").innerHTML = "CORRECT"; //make the p element reflect correct
     } else {
         time = time -10;
         currentQuestionIndex++;
