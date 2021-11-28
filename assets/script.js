@@ -3,8 +3,8 @@
 // DONE - THEN a timer starts 
 // DONE - SIMULTANEOUSLY I am presented with a question
 // DONE - THIS question has 4 multiple choice ANSWRS
-// WHEN I answer a question
-// THEN I am presented with another question
+// DONE - WHEN I answer a question
+// DONE - THEN I am presented with another question
 // WHEN I answer a question incorrectly
 // THEN time is subtracted from the clock
 // WHEN all questions are answered or the timer reaches 0
@@ -115,8 +115,6 @@ function startGame(){
 function endGame() {
 
 }
-        //for loop with event listeners for each button
-
 
 function grabQuestion() {
     console.log(time);
@@ -143,7 +141,6 @@ function grabQuestion() {
                 answerCheck();
             });
         }
-    
 }
 
 
@@ -162,11 +159,6 @@ function answerCheck (){ //function to check if the answer is correct
     }
     grabQuestion();
 }
-
-
-
-
-
 
 
 startGame();
