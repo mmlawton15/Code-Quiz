@@ -20,51 +20,52 @@ let buttons = document.getElementById("optionButton");
 var currentQuestionIndex = 0;
 var currentQuestion;
 var userAnswer;
+var score = 0;
+var scoreStorage = [];
+var previousScores; //need to figure out high scores storage
 
 let listOfQuestionsAndAnswers = [
      {
          question: "Arrays in Javascript can be used to store ___?",
-         answerArray: ["Booleans", "Numbers and Strings", "Other Arrays", "All of the above"], answer: "All of the above"
+         answerArray: ["Booleans", "Numbers and Strings", "Other Arrays", "All of the above"], correctAnswer: "All of the above"
      },
      {
         question: "Commonly used Data Types include ___.",
-        answerArray: ["Booleans", "Strings", "Arrays", "All of the Above"], answer: "All of the Above"
+        answerArray: ["Booleans", "Strings", "Arrays", "All of the Above"], correctAnswer: "All of the Above"
     },
     {
         question: "The condition in an if/else statement is enclosed with a ___",
-        answerArray: ["Bracket", "Curly Brace", "Parenthesis", "All of the above"], answer: "Parenthesis"
+        answerArray: ["Bracket", "Curly Brace", "Parenthesis", "All of the above"], correctAnswer: "Parenthesis"
     },
     {
         question: "A very useful tool used during development and debugging",
-        answerArray: ["Google", "For Loops", "Debugger", "all of the above"], answer: "All of the above"
+        answerArray: ["Google", "For Loops", "Debugger", "all of the above"], correctAnswer: "All of the above"
     },
     {
         question: "String values must be enclosed with ___ when being assigned to variables.",
-        answerArray: ["curly braces", "square brackets", "parentheses", "curly braces and parentheses"], answer: "Curly braces"
+        answerArray: ["curly braces", "square brackets", "parentheses", "curly braces and parentheses"], correctAnswer: "Curly braces"
     },
     {
         question: "DOM stands for ___?",
-        answerArray: ["Direct Optimized Model", "document Object Model", "Document Oblivion Matches", "Diligent Obtuse Monkey"], answer: "Document Object Model"
+        answerArray: ["Direct Optimized Model", "document Object Model", "Document Oblivion Matches", "Diligent Obtuse Monkey"], correctAnswer: "Document Object Model"
     },
     {
         question: "What is the point of HTML?",
-        answerArray: ["HTML adds colors and fonts to a website", "HTML provides the basic layout of websites", "HTML adds logic to a website", "HTMl adds colors and logic to a website"], answer:"HTML proveds the basic layout of a website"
+        answerArray: ["HTML adds colors and fonts to a website", "HTML provides the basic layout of websites", "HTML adds logic to a website", "HTMl adds colors and logic to a website"], correctAnswer:"HTML proveds the basic layout of a website"
     },
     {
         question: "CSS stands for ___?",
-        answerArray: ["Cartridge Section Styler", "Colorful Sheet Styler", "Cascading Style Sheets", "Card structure stylizer"], answer: "Cascading Style Sheets"
+        answerArray: ["Cartridge Section Styler", "Colorful Sheet Styler", "Cascading Style Sheets", "Card structure stylizer"], correctAnswer: "Cascading Style Sheets"
     },
     {
         question: "Which of the following are NOT forms of the command line?",
-        answerArray: ["Kanban", "Bash", "Terminal", "All of the above"], answer: "Kanban"
+        answerArray: ["Kanban", "Bash", "Terminal", "All of the above"], correctAnswer: "Kanban"
     },
     {
         question: "Who created the World Wide Web?",
-        answerArray: ["Tim Berners-Lee", "Steve Jobs", "Elon Musk", "Benjamin Franklin"], answer: "Tim Berners-Lee"
+        answerArray: ["Tim Berners-Lee", "Steve Jobs", "Elon Musk", "Benjamin Franklin"], correctAnswer: "Tim Berners-Lee"
     }
  ]
-
-var score = 0;
 
 // TIMER CODE
 var time = 60
@@ -126,12 +127,12 @@ function grabQuestion() {
     console.log(currentQuestion);
     buttons.innerHTML = ""; //set the buttons to an empty string so they don't hold onto previous data
 
-    if (time >0 || currentQuestionIndex <= listOfQuestionsAndAnswers.length) { //if the timer is greater than 0 or we aren't at the end of the array of questions, run this code
+    if (time > 0 || currentQuestionIndex <= listOfQuestionsAndAnswers.length) { //if the timer is greater than 0 or we aren't at the end of the array of questions, run this code
         for (let i=0; i <listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){
-            answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
-            console.log("answer: " + answer);
+            userAnswer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
+            console.log("option: " + userAnswer);
             let buttonBanana = document.createElement("button"); //create a button
-            buttonBanana.innerHTML = answer;
+            buttonBanana.innerHTML = userAnswer;
             buttonBanana.type ="submit"; //sets it up t0 submit a value when clicked
             buttonBanana.name = "formBtn"; //name
             buttons.appendChild(buttonBanana); //appends buttonBanana to buttons, or to the div in the html
@@ -141,7 +142,6 @@ function grabQuestion() {
                     value = target.innerHTML
                     console.log(value + " button was clicked");
                 };
-                answer = userAnswer; //make the users choice a global variable so it's able to be referenced from any function
                 console.log(userAnswer);
                 answerCheck();
             });
@@ -154,7 +154,7 @@ function grabQuestion() {
 
 
 function answerCheck (){ //function to check if the answer is correct
-    console.log(answer);
+    console.log(userAnswer);
     if (userAnswer == listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.answer){ //if the answer matches the answer in the array
         currentQuestionIndex++; //move to the next question
         score +1; //increase score
@@ -167,6 +167,14 @@ function answerCheck (){ //function to check if the answer is correct
     }
     grabQuestion();
 }
+
+
+//I NEED A FUNCTION TO KEEP TRACK OF SCORES
+
+function submitForm(event) {
+    
+}
+
 
 
 startGame();
