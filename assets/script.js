@@ -19,6 +19,7 @@ let questionDisplay = document.getElementById("questionPlaceholderSpace");
 let buttons = document.getElementById("optionButton");
 var currentQuestionIndex = 0;
 var currentQuestion;
+var userAnswer;
 
 let listOfQuestionsAndAnswers = [
      {
@@ -138,6 +139,8 @@ function grabQuestion() {
                     value = target.innerHTML
                     console.log("the button was clicked " +value);
                 };
+                userAnswer = answer;
+                console.log(userAnswer);
                 answerCheck();
             });
         }
@@ -147,7 +150,7 @@ function grabQuestion() {
 
 function answerCheck (){ //function to check if the answer is correct
     console.log(answer);
-    if (answer == listOfQuestionsAndAnswers[currentQuestionIndex].answer){ //if the answer is correct
+    if (userAnswer == listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.answer){ //if the answer is correct
         currentQuestionIndex++; //move to the next question
         score +1; //increase score
         console.log(score);
