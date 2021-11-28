@@ -197,6 +197,7 @@ function grabQuestion() {
         for (let i=0; i <listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){
             answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
             let buttonBanana = document.createElement("button"); //create a button
+            buttonBanana.innerHTML = answer;
             buttonBanana.type ="submit"; //sets it up tp submit a value when clicked
             buttonBanana.name = "formBtn"; //name
             buttons.append(buttonBanana); //appends buttonBanana to buttons, or to the div in the html
