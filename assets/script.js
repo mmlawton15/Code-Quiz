@@ -16,10 +16,9 @@
 
 //ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
 let questionDisplay = document.getElementById("questionPlaceholderSpace");
-let buttons = document.getElementsByClassName("optionButton");
+let buttons = document.getElementById("optionButton");
 var currentQuestionIndex = 0;
 var currentQuestion;
-var emptyButtonArray = []//push all the buttons into this array. answerArray.answer. IM CONFUSED WHY I WOULD DO THIS, is it to set all of the values of the buttons to whatever array number they're assigned to?
 
 let listOfQuestionsAndAnswers = [
      {
@@ -66,8 +65,6 @@ let listOfQuestionsAndAnswers = [
 
 var score = 0;
 
-
-
 // TIMER CODE
 var time = 60
 var timerInterval;
@@ -75,7 +72,6 @@ function tickTime() {
     time = time -1
     document.getElementById('timerStart').innerHTML = time;
 }
-
 
 //START BUTTON CODE
 function startGame(){
@@ -119,70 +115,6 @@ function startGame(){
 function endGame() {
 
 }
-
-
-//questions and answers in text areas function
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[0].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[0].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[0].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[0].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[0].answerArray[3];
-    
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[1].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[1].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[1].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[1].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[1].answerArray[3];  
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[2].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[2].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[2].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[2].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[2].answerArray[3];
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[3].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[3].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[3].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[3].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[3].answerArray[3];
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[4].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[4].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[4].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[4].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[4].answerArray[3];
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[5].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[5].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[5].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[5].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[5].answerArray[3];
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[6].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[6].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[6].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[6].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[6].answerArray[3];
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[7].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[7].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[7].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[7].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[7].answerArray[3];
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[8].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[8].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[8].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[8].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[8].answerArray[3];
-
-    // questionDisplay.innerHTML = listOfQuestionsAndAnswers[9].question;
-    // buttonZero.textContent = listOfQuestionsAndAnswers[9].answerArray[0]; //set the text in the button to the first object in the array
-    // buttonOne.textContent = listOfQuestionsAndAnswers[9].answerArray[1];
-    // buttonTwo.textContent = listOfQuestionsAndAnswers[9].answerArray[2];
-    // buttonThree.textContent = listOfQuestionsAndAnswers[9].answerArray[3];
-
-
         //for loop with event listeners for each button
 
 
@@ -196,25 +128,22 @@ function grabQuestion() {
 
         for (let i=0; i <listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){
             answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
+            console.log("answer: " + answer);
             let buttonBanana = document.createElement("button"); //create a button
             buttonBanana.innerHTML = answer;
             buttonBanana.type ="submit"; //sets it up tp submit a value when clicked
             buttonBanana.name = "formBtn"; //name
-            buttons.append(buttonBanana); //appends buttonBanana to buttons, or to the div in the html
-
-            buttons.addEventListener("click", answerCheck);
+            buttons.appendChild(buttonBanana); //appends buttonBanana to buttons, or to the div in the html
+            buttons.addEventListener("click", function(event) {
+                let target = event.target;
+                if (target.matches('button')){
+                    value = target.innerHTML
+                    console.log("the button was clicked " +value);
+                };
+                answerCheck();
+            });
         }
-
-    // questionDisplay = listOfQuestionsAndAnswers[currentQuestionIndex].question; //set the question space to equal the question
-    // while(currentQuestionIndex < listOfQuestionsAndAnswers.length || time >0){ //while we haven't filtered through all the questions and the timer is running
-    //     for (let i = 0; i < listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){  //as long as i is less than the length of teh questions, keep going
-    //         answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
-    //         //emptyButtonArray.addEventListener("click", answerCheck);
-    //     }
-    // }{
-    //     endGame();
-    // }   
-    answerCheck();
+    
 }
 
 
