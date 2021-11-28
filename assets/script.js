@@ -30,7 +30,7 @@ let listOfQuestionsAndAnswers = [
         answerArray: ["Booleans", "Strings", "Arrays", "All of the Above"], answer: "All of the Above"
     },
     {
-        question: "The condidtion in an if/else statement is enclosed with a ___",
+        question: "The condition in an if/else statement is enclosed with a ___",
         answerArray: ["Bracket", "Curly Brace", "Parenthesis", "All of the above"], answer: "Parenthesis"
     },
     {
@@ -153,6 +153,7 @@ function answerCheck (){ //function to check if the answer is correct
     if (answer == listOfQuestionsAndAnswers[currentQuestionIndex].answer){ //if the answer is correct
         currentQuestionIndex++; //move to the next question
         score +1; //increase score
+        console.log(score);
         document.getElementById("correctOrIncorrect").innerHTML = "CORRECT"; //make the p element reflect correct
     } else {
         time = time -10;
