@@ -81,37 +81,40 @@ function tickTime() {
 
 
 //START BUTTON CODE
-document.getElementById("startButton").addEventListener("click",function() { 
-    timerInterval = setInterval(() => { //start timer once the button is clicked
-        if (time > 0) {
-            tickTime();
+function startGame(){
+    document.getElementById("startButton").addEventListener("click",function() { 
+        timerInterval = setInterval(() => { //start timer once the button is clicked
+            if (time > 0) {
+                tickTime();
+            } else {
+                clearInterval(timerInterval);
+            }
+        }, 1000)
+        //make the welcome dissappear when the button is clicked
+        const initialWelcomeNotice = document.getElementById("initialWelcome") 
+        if (initialWelcomeNotice.style.display !== "none"){
+            initialWelcomeNotice.style.display = "none";
         } else {
-            clearInterval(timerInterval);
+            initialWelcomeNotice.style.display = "block";
         }
-    }, 1000)
-//make the welcome dissappear when the button is clicked
-    const initialWelcomeNotice = document.getElementById("initialWelcome") 
-    if (initialWelcomeNotice.style.display !== "none"){
-        initialWelcomeNotice.style.display = "none";
-    } else {
-        initialWelcomeNotice.style.display = "block";
+        //make the question section visible
+        var questionFormatting = document.getElementById("questionFormattingID"); //get the question section
+        var displaySetting = questionFormatting.style.display; //get the current value of the div's display
+        if (displaySetting =='block'){
+            questionFormatting.style.display = "none"; //if the section is showing, hide it
+        } else {
+            questionFormatting.style.display = "block"; //if the section is not showing, show it
+        }
+        var pFormatting = document.getElementById("correctOrIncorrect");
+        if (displaySetting == 'block'){
+            pFormatting.style.display = "none";
+        } else {
+            pFormatting.style.display = 'block';
+        }
     }
-//make the question section visible
-    var questionFormatting = document.getElementById("questionFormattingID"); //get the question section
-    var displaySetting = questionFormatting.style.display; //get the current value of the div's display
-    if (displaySetting =='block'){
-        questionFormatting.style.display = "none"; //if the section is showing, hide it
-    } else {
-        questionFormatting.style.display = "block"; //if the section is not showing, show it
-    }
-    var pFormatting = document.getElementById("correctOrIncorrect");
-    if (displaySetting == 'block'){
-        pFormatting.style.display = "none";
-    } else {
-        pFormatting.style.display = 'block';
-    }
-});//END OF START BUTTON CODE
-
+    ) 
+};
+grabQuestion;
 
 //questions and answers in text areas function
     questionDisplay.innerHTML = listOfQuestionsAndAnswers[0].question;
@@ -184,11 +187,6 @@ document.getElementById("startButton").addEventListener("click",function() {
 
 
 
-
-
-
-
-
 function grabQuestion() {
     questionDisplay = listOfQuestionsAndAnswers[currentQuestionIndex].question; //code to pick the question.
     while(currentQuestionIndex < listOfQuestionsAndAnswers.length){ //while we haven't filtered through all the questions, keep going
@@ -200,6 +198,9 @@ function grabQuestion() {
         endGame();
     }   
 }
+
+
+
 
 
 function answerCheck (answer){ //function to check if the answer is correct
@@ -223,5 +224,7 @@ function endGame() {
 
 }
 
+
+startGame();
 
 
