@@ -114,48 +114,53 @@ function startGame(){
 
 //END GAME FUNCTION
 function endGame() {
-
+    //break;
 }
 
+
+//CYCLE THROUGH QUESTIONS CODE
 function grabQuestion() {
     console.log(time);
     currentQuestion = listOfQuestionsAndAnswers[currentQuestionIndex].question;
-    questionDisplay.textContent = currentQuestion;
+    questionDisplay.textContent = currentQuestion; //set the question space to the current question in the array
     console.log(currentQuestion);
-
     buttons.innerHTML = ""; //set the buttons to an empty string so they don't hold onto previous data
 
+    if (time >0 || currentQuestionIndex <= listOfQuestionsAndAnswers.length) { //if the timer is greater than 0 or we aren't at the end of the array of questions, run this code
         for (let i=0; i <listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.length; i++){
             answer = listOfQuestionsAndAnswers[currentQuestionIndex].answerArray[i];
             console.log("answer: " + answer);
             let buttonBanana = document.createElement("button"); //create a button
             buttonBanana.innerHTML = answer;
-            buttonBanana.type ="submit"; //sets it up tp submit a value when clicked
+            buttonBanana.type ="submit"; //sets it up t0 submit a value when clicked
             buttonBanana.name = "formBtn"; //name
             buttons.appendChild(buttonBanana); //appends buttonBanana to buttons, or to the div in the html
             buttons.addEventListener("click", function(event) {
                 let target = event.target;
                 if (target.matches('button')){
                     value = target.innerHTML
-                    console.log("the button was clicked " +value);
+                    console.log(value + " button was clicked");
                 };
-                userAnswer = answer;
+                answer = userAnswer; //make the users choice a global variable so it's able to be referenced from any function
                 console.log(userAnswer);
                 answerCheck();
             });
         }
+    } else { //if timer is 0 or we are past the last question, end game
+        endGame();
+    }
 }
 
 
 
 function answerCheck (){ //function to check if the answer is correct
     console.log(answer);
-    if (userAnswer == listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.answer){ //if the answer is correct
+    if (userAnswer == listOfQuestionsAndAnswers[currentQuestionIndex].answerArray.answer){ //if the answer matches the answer in the array
         currentQuestionIndex++; //move to the next question
         score +1; //increase score
         console.log(score);
         document.getElementById("correctOrIncorrect").innerHTML = "CORRECT"; //make the p element reflect correct
-    } else {
+    } else { //if teh user answer doesn't match the answer in the array
         time = time -10;
         currentQuestionIndex++;
         document.getElementById("correctOrIncorrect").innerHTML - "INCORRECT";
