@@ -5,8 +5,8 @@
 // DONE - THIS question has 4 multiple choice ANSWRS
 // DONE - WHEN I answer a question
 // DONE - THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
+// DONE - WHEN I answer a question incorrectly
+// DONE - THEN time is subtracted from the clock
 // WHEN all questions are answered or the timer reaches 0
 // THEN the game is over
 // WHEN the game is over
