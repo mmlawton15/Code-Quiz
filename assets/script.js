@@ -7,7 +7,7 @@
 // DONE - THEN I am presented with another question
 // DONE - WHEN I answer a question incorrectly
 // DONE - THEN time is subtracted from the clock
-// WHEN all questions are answered or the timer reaches 0
+// DONE - WHEN all questions are answered or the timer reaches 0
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
@@ -92,8 +92,10 @@ function startGame() {
         timerInterval = setInterval(() => { //start timer once the button is clicked
             if (time > 0) {
                 tickTime();
-            } else {
+            } else { //if the timer is equal to 0
                 clearInterval(timerInterval);
+                
+                endGame();
             }
         }, 1000);
         //make the welcome dissappear when the button is clicked
@@ -126,7 +128,7 @@ function startGame() {
 
 //END GAME FUNCTION
 function endGame() {
-    //break;
+    //show score
 }
 
 
@@ -171,6 +173,7 @@ function answerCheck() { //function to check if the answer is correct
         score + 1; //increase score
         console.log(score);
         document.getElementById("correctOrIncorrect").innerHTML = "CORRECT"; //make the p element reflect correct
+
     } else { //if teh user answer doesn't match the answer in the array
         time = time - 10;
         currentQuestionIndex++;
@@ -181,8 +184,7 @@ function answerCheck() { //function to check if the answer is correct
 
 
 //I NEED A FUNCTION TO KEEP TRACK OF SCORES
-
-function submitForm(event) {
+function keepScore () {
 
 }
 
