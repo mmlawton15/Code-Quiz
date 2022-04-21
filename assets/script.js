@@ -1,19 +1,3 @@
-// DONE - GIVEN I am taking a code quiz
-// DONE - WHEN I click the start button
-// DONE - THEN a timer starts 
-// DONE - SIMULTANEOUSLY I am presented with a question
-// DONE - THIS question has 4 multiple choice ANSWRS
-// DONE - WHEN I answer a question
-// DONE - THEN I am presented with another question
-// DONE - WHEN I answer a question incorrectly
-// DONE - THEN time is subtracted from the clock
-// DONE - WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
-
-
-
 //ARRAY OF QUESTIONS AND THEIR INITIAL STATUS
 let questionDisplay = document.getElementById("questionPlaceholderSpace");
 let buttonDivEl = document.getElementById("optionButton");
@@ -22,7 +6,7 @@ var currentQuestion;
 var currentAnswerToAdd;
 var score = 0;
 var scoreStorage = [];
-var previousScores; //need to figure out high scores storage
+var previousScores;
 var userChoiceTaco;
 
 let listOfQuestionsAndAnswers = [

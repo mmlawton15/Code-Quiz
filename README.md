@@ -5,6 +5,14 @@ This is my 4th challenge of the bootcamp where I was tasked with creating a codi
 Ideally, it will mimic the kind of coding quizzes we will encounter while interviewing for jobs. It's multiple choice and you will be graded at the end based on your choices throughout the quiz.
 It's multiple choice, and a positive sound will play for right answers and increase your score. If you chose the wron answer, a negative sound will play and you won't get points. At the end, you can see high scores from previous plays and play again.
 
+## Stack?
+Frontend:
+- HTML
+- CSS
+Backend:
+- Javascript
+- DOM API for Javascript interactivity
+
 ## How did you create it?
 I created the webpage with HTML, the styling for the page with CSS, and the logic behind the interactivity with Javascript.
 
