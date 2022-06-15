@@ -106,13 +106,10 @@ function startGame() {
     })
 };
 
-
-
 //END GAME FUNCTION
 function endGame() {
     //show score
 }
-
 
 //CYCLE THROUGH QUESTIONS CODE
 function grabQuestion() {
