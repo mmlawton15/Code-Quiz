@@ -159,8 +159,4 @@ function answerCheck() { //function to check if the answer is correct
     grabQuestion();
 }
 
-function keepScore () {
-}
-
-var myButton;
 startGame();
