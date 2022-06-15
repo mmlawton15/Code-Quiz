@@ -90,7 +90,7 @@ function startGame() {
         
         //make the question section visible
         var questionFormatting = document.getElementById("questionFormattingID");
-        var displaySetting = questionFormatting.style.display; //get the current value of the div's display style
+        var displaySetting = questionFormatting.style.display;
         if (displaySetting === 'block') {
             questionFormatting.style.display = "none"; //if the section is showing, hide it
         } else {
