@@ -92,7 +92,7 @@ function startGame() {
         var questionFormatting = document.getElementById("questionFormattingID");
         var displaySetting = questionFormatting.style.display;
         if (displaySetting === 'block') {
-            questionFormatting.style.display = "none"; //if the section is showing, hide it
+            questionFormatting.style.display = "none";
         } else {
             questionFormatting.style.display = "block"; //if the section is not showing, show it
         }
