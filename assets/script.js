@@ -94,7 +94,7 @@ function startGame() {
         if (displaySetting === 'block') {
             questionFormatting.style.display = "none";
         } else {
-            questionFormatting.style.display = "block"; //if the section is not showing, show it
+            questionFormatting.style.display = "block";
         }
         var pFormatting = document.getElementById("correctOrIncorrect");
         if (displaySetting === 'block') {
