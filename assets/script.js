@@ -76,7 +76,7 @@ function startGame() {
         timerInterval = setInterval(() => {
             if (time > 0) {
                 tickTime();
-            } else { //if the timer is equal to 0
+            } else {
                 clearInterval(timerInterval);
                 
                 endGame();
