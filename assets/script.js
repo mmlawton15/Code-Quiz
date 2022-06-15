@@ -73,7 +73,7 @@ function tickTime() {
 //START BUTTON CODE
 function startGame() {
     document.getElementById("startButton").addEventListener("click", function () {
-        timerInterval = setInterval(() => { //start timer once the button is clicked
+        timerInterval = setInterval(() => {
             if (time > 0) {
                 tickTime();
             } else { //if the timer is equal to 0
