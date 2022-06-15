@@ -78,7 +78,6 @@ function startGame() {
                 tickTime();
             } else {
                 clearInterval(timerInterval);
-                
                 endGame();
             }
         }, 1000);
