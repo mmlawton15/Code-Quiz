@@ -143,8 +143,6 @@ function grabQuestion() {
     }
 }
 
-
-
 function answerCheck() { //function to check if the answer is correct
     console.log(userChoiceTaco);
     if (userChoiceTaco === listOfQuestionsAndAnswers[currentQuestionIndex].correctAnswer) { //if the answer matches the answer in the array
@@ -161,19 +159,8 @@ function answerCheck() { //function to check if the answer is correct
     grabQuestion();
 }
 
-
-//I NEED A FUNCTION TO KEEP TRACK OF SCORES
 function keepScore () {
-
 }
 
-
-
 var myButton;
-// when you hear a click on myButton fire my function called startGame
-//myButton.addEventListener('click', startGame);
-// fire my function callled startGame
 startGame();
-//grabQuestion();
-
-
