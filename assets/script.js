@@ -82,7 +82,6 @@ function startGame() {
                 endGame();
             }
         }, 1000);
-        //make the welcome dissappear when the button is clicked
         const initialWelcomeNotice = document.getElementById("initialWelcome")
         if (initialWelcomeNotice.style.display !== "none") {
             initialWelcomeNotice.style.display = "none";
